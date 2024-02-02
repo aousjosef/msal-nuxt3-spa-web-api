@@ -2,7 +2,8 @@
 ##
 
 A fork of 
-https://github.com/Akash52/msal-with-nuxt3/assets/31063892/77e1351c-df21-4a91-bdd1-7cc53c387d81
+https://github.com/Akash52/msal-with-nuxt3/
+To include web api
 
 
 
