@@ -1,4 +1,4 @@
-# Microsoft Authentication Library (MSAL) with Nuxt 3 🚀
+# Microsoft Authentication Library (MSAL) with Nuxt 3 and .NET Web API Azure AD🚀
 ##
 
 A fork of 
