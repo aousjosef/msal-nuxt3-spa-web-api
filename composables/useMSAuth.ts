@@ -52,6 +52,7 @@ export const useMSAuth = () => {
     function handleResponse(resp: any) {
         if (resp?.account) {
             setupTokenExpirationTimer();
+            
         } else {
             console.log("LOGIN");
         }
@@ -81,6 +82,9 @@ export const useMSAuth = () => {
         try {
             const response = await msalInstance.value.acquireTokenSilent({
                 account,
+                         // const backendApiScope = "api://your-backend-api-id/access_as_user";
+
+       // scopes: ["User.Read", backendApiScope] replace with this instead in order to connect to web api
                 scopes: ["User.Read"],
             });
             console.log("Refreshed Access Token:", response.accessToken);
@@ -92,6 +96,9 @@ export const useMSAuth = () => {
     }
 
     const loginRequest = {
+       // const backendApiScope = "api://your-backend-api-id/access_as_user";
+
+       // scopes: ["User.Read", backendApiScope] 
         scopes: ["User.Read"],
     };
 
@@ -113,8 +120,13 @@ export const useMSAuth = () => {
             try {
                 const response = await msalInstance.value.acquireTokenSilent({
                     account,
+                             // const backendApiScope = "api://your-backend-api-id/access_as_user";
+
+       // scopes: ["User.Read", backendApiScope] replace with this instead in order to connect to web api
                     scopes: ["User.Read"],
                 });
+                console.log(`This is bearar token accoired silently ${response.accessToken}`);
+                
                 return response.accessToken;
             } catch (err) {
                 return null;

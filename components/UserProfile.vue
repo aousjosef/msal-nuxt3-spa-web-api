@@ -60,8 +60,14 @@ async function logout(accountId) {
     }
 }
 
+//function for requring image
 const getProfileImage = async () => {
+    
+    //function for requring token
     const accessToken = await msAuth.acquireTokenSilent({
+           // const backendApiScope = "api://your-backend-api-id/access_as_user";
+
+       // scopes: ["User.Read", backendApiScope] replace with this instead in order to connect to web api
         scopes: ["User.Read"],
     });
     const response = await fetch(
@@ -77,12 +83,14 @@ const getProfileImage = async () => {
         const url = URL.createObjectURL(blob);
         return url;
     }
+    console.log(response);
 };
 
 onMounted(async () => {
     if (isAuthenticated) {
         profileImage.value = await getProfileImage();
         userStore.value.userImage = profileImage.value;
+        console.log(JSON.stringify(userStore.value.user.bearerToken, null, 2));
     }
 });
 
