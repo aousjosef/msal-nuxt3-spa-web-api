@@ -77,7 +77,7 @@ Step 3 :
 
 ```
 CLIENTID=
-AUTHORITY=https://login.microsoftonline.com
+AUTHORITY=https://login.microsoftonline.com/[tenentID]
 REDIRECT_URI=http://localhost:3000
 POSTLOGOUT_REDIRECT_URI=http://localhost:3000
 ```
